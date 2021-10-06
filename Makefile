@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+         #
+#    By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:44:18 by ceduard2          #+#    #+#              #
-#    Updated: 2021/10/05 18:51:45 by linuxusr         ###   ########.fr        #
+#    Updated: 2021/10/05 19:12:20 by ceduard2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,13 @@ CFLAGS	= -Wall -Wextra -Werror
 
 SRCS	= ft_printf.c\
 		ft_strlen.c\
+		ft_strlcpy.c\
+		ft_itoa.c\
 		ft_putchar.c\
 		ft_putstr.c\
 		ft_putptr.c\
 		ft_puthex.c\
+		ft_putuphex.c\
 
 
 OBJS = $(SRCS:.c=.o)

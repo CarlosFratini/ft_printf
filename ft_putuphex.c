@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putuphex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:47:33 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/05 18:46:36 by linuxusr         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:15:58 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putuphex(size_t n)
 			rmd -= 10;
 			hex = rmd + 'A';
 		}
-		count = ft_puthex(n/16);
+		count = ft_putuphex(n/16);
 		write(1, &hex, 1);
 	}
 	return (count + 1);
