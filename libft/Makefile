@@ -6,7 +6,7 @@
 #    By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:44:18 by ceduard2          #+#    #+#              #
-#    Updated: 2021/10/11 18:46:03 by linuxusr         ###   ########.fr        #
+#    Updated: 2021/10/13 14:41:23 by linuxusr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS	= ft_atoi.c\
 		ft_isdigit.c\
 		ft_isprint.c\
 		ft_itoa.c\
+		ft_ptox.c\
 		ft_memchr.c\
 		ft_memcmp.c\
 		ft_memcpy.c\

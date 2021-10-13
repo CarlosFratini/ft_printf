@@ -6,13 +6,13 @@
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:44:27 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/11 18:52:02 by linuxusr         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:15:30 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_print_uhex(ssize_t n)
+size_t	ft_print_uhex(unsigned int n)
 {
 	int		i;
 	char	*s;

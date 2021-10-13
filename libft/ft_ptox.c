@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intohex.c                                       :+:      :+:    :+:   */
+/*   ft_ptox.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 15:25:35 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/13 14:15:20 by linuxusr         ###   ########.fr       */
+/*   Created: 2021/10/13 14:32:12 by linuxusr          #+#    #+#             */
+/*   Updated: 2021/10/13 14:42:53 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static void	ft_convert_hex(char *s, unsigned int n, size_t len)
+static void	ft_ptr_to_hex(char *s, unsigned long int n, size_t len)
 {
 	unsigned int	rmd;
-	size_t				i;
+	size_t			i;
 
 	i = len;
 	s[i] = '\0';
@@ -33,7 +32,7 @@ static void	ft_convert_hex(char *s, unsigned int n, size_t len)
 	}
 }
 
-static size_t	ft_hexlen(unsigned int n)
+static size_t	ft_ptr_len(unsigned long int n)
 {
 	size_t	len;
 
@@ -48,18 +47,18 @@ static size_t	ft_hexlen(unsigned int n)
 	return (len);
 }
 
-char	*ft_intohex(unsigned int n)
+char	*ft_ptox(unsigned long int n)
 {
 	char	*s;
 	size_t	len;
 
-	len = ft_hexlen(n);
+	len = ft_ptr_len(n);
 	s = (char *)malloc(sizeof(*s) * (len + 1));
 	if(s == NULL)
 		return (NULL);
 	if(n == 0)
 		ft_strlcpy(s, "0", 2);
 	else
-		ft_convert_hex(s, n, len);
+		ft_ptr_to_hex(s, n, len);
 	return (s);
 }

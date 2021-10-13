@@ -6,7 +6,7 @@
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 14:38:01 by ceduard2          #+#    #+#             */
-/*   Updated: 2021/10/13 11:57:03 by linuxusr         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:41:01 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *b, size_t len);
 void	*ft_calloc(size_t num, size_t size);
-char	*ft_intohex(unsigned long int n);
+char	*ft_intohex(unsigned int n);
+char	*ft_ptox(unsigned long int n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);

@@ -6,7 +6,7 @@
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:24:58 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/13 13:32:43 by linuxusr         ###   ########.fr       */
+/*   Updated: 2021/10/13 14:27:58 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static size_t	ft_printformats(char c1, va_list args)
 	else if(c1 == 'u')
 		len = ft_print_uint(va_arg(args, unsigned int));
 	else if(c1 == 'x')
-		len = ft_print_hex(va_arg(args, unsigned long int));
+		len = ft_print_hex(va_arg(args, unsigned int));
 	else if(c1 == 'X')
-		len = ft_print_uhex(va_arg(args, unsigned long int));
+		len = ft_print_uhex(va_arg(args, unsigned int));
 	else if(c1 == '%')
 		len = ft_print_char('%');
 	return (len);
