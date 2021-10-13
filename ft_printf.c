@@ -3,48 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 17:24:58 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/05 19:21:14 by ceduard2         ###   ########.fr       */
+/*   Updated: 2021/10/13 13:32:43 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_printformats(char c1, va_list args)
+static size_t	ft_printformats(char c1, va_list args)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	if (c1 == 'c')
-		len = ft_putchar(va_arg(args, int));
+		len = ft_print_char(va_arg(args, int));
 	else if(c1 == 's')
-		len = ft_putstr(va_arg(args, char *));
+		len = ft_print_str(va_arg(args, char *));
 	else if(c1 == 'p')
-		len = ft_putptr(va_arg(args, void *));
+		len = ft_print_ptr(va_arg(args, void *));
 	else if(c1 == 'd')
-		len = ft_putstr(ft_itoa(va_arg(args, int)));
+		len = ft_print_int(va_arg(args, int));
 	else if(c1 == 'i')
-		len = ft_putstr(ft_itoa(va_arg(args, int)));
+		len = ft_print_int(va_arg(args, int));
 	else if(c1 == 'u')
-		len = ft_putstr(ft_itoa(va_arg(args, int)));
+		len = ft_print_uint(va_arg(args, unsigned int));
 	else if(c1 == 'x')
-		len = ft_puthex((size_t)va_arg(args, int));
+		len = ft_print_hex(va_arg(args, unsigned long int));
 	else if(c1 == 'X')
-		len = ft_putuphex((size_t)va_arg(args, int));
+		len = ft_print_uhex(va_arg(args, unsigned long int));
 	else if(c1 == '%')
-	{
-		write(1, "%", 2);
-		len++;
-	}
+		len = ft_print_char('%');
 	return (len);
 }
 
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int		len;
+	size_t	len;
 	int		i;
 
 	i = 0;
@@ -59,7 +56,7 @@ int	ft_printf(const char *s, ...)
 		}
 		else if(s[i] != '%')
 		{
-			ft_putchar(s[i]);
+			ft_putchar_fd(s[i], 1);
 			len++;
 		}
 		i++;

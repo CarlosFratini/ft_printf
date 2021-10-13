@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_uhex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:34:18 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/11 18:49:20 by linuxusr         ###   ########.fr       */
+/*   Created: 2021/10/11 18:44:27 by linuxusr          #+#    #+#             */
+/*   Updated: 2021/10/11 18:52:02 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+size_t	ft_print_uhex(ssize_t n)
+{
+	int		i;
+	char	*s;
+	size_t	len;
 
-size_t	ft_print_char(int n);
-size_t	ft_print_str(char *s);
-size_t	ft_print_ptr(void *p);
-size_t	ft_print_int(int n);
-size_t	ft_print_uint(unsigned int u);
-size_t	ft_print_hex(ssize_t n);
-size_t	ft_print_uhex(ssize_t n);
-int		ft_printf(const char *s, ...);
-
-#endif
+	i = 0;
+	s = ft_intohex(n);
+	while(s[i] != '\0')
+	{
+		s[i] = ft_toupper(s[i]);
+		i++;
+	}
+	ft_putstr_fd(s, 1);
+	len = ft_strlen(s);
+	free(s);
+	return (len);
+}

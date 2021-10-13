@@ -3,48 +3,50 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:44:18 by ceduard2          #+#    #+#              #
-#    Updated: 2021/10/05 19:12:20 by ceduard2         ###   ########.fr        #
+#    Updated: 2021/10/11 18:55:53 by linuxusr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ft_printf.a
+LIBFT	= libft.a
 
-CC	= clang
+NAME	= libftprintf.a
 
-CFLAGS	= -Wall -Wextra -Werror
+CC		= clang
+
+CFLAGS	= -Wall -Wextra -Werror -g
 
 SRCS	= ft_printf.c\
-		ft_strlen.c\
-		ft_strlcpy.c\
-		ft_itoa.c\
-		ft_putchar.c\
-		ft_putstr.c\
-		ft_putptr.c\
-		ft_puthex.c\
-		ft_putuphex.c\
+		ft_print_char.c\
+		ft_print_str.c\
+		ft_print_ptr.c\
+		ft_print_int.c\
+		ft_print_uint.c\
+		ft_print_hex.c\
+		ft_print_uhex.c\
 
+OBJS	= $(SRCS:.c=.o)
 
-OBJS = $(SRCS:.c=.o)
+all:	$(NAME)
 
-$(NAME): $(OBJS)
-	ar -rs $(NAME) $(OBJS)
+%.o:	%.c
+		$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME)
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+$(NAME):$(OBJS)
+		$(MAKE) -C ./libft
+		cp libft/libft.a $(NAME)
+		ar -rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+		$(MAKE) clean -C ./libft
+		rm -f $(OBJS)
 
-fclean:
-	rm -f $(NAME)
+fclean:	clean
+		rm -f $(NAME)
+		$(MAKE) fclean -C ./libft
 
-cleanall: clean fclean
+re:		fclean all
 
-re: clean fclean all
-
-.PHONY: all bonus clean fclean re
+.PHONY:	all clean fclean re

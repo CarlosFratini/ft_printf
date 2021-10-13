@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:34:18 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/11 18:49:20 by linuxusr         ###   ########.fr       */
+/*   Created: 2021/08/25 16:51:57 by ceduard2          #+#    #+#             */
+/*   Updated: 2021/09/24 00:23:01 by linuxusr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	slen;
 
-size_t	ft_print_char(int n);
-size_t	ft_print_str(char *s);
-size_t	ft_print_ptr(void *p);
-size_t	ft_print_int(int n);
-size_t	ft_print_uint(unsigned int u);
-size_t	ft_print_hex(ssize_t n);
-size_t	ft_print_uhex(ssize_t n);
-int		ft_printf(const char *s, ...);
-
-#endif
+	i = 0;
+	slen = ft_strlen(src);
+	if (size == 0)
+		return (slen);
+	while (src[i] != '\0' && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (slen);
+}
