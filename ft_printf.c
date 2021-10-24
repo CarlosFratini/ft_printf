@@ -6,7 +6,7 @@
 /*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:54:10 by ceduard2          #+#    #+#             */
-/*   Updated: 2021/10/20 15:55:35 by ceduard2         ###   ########.fr       */
+/*   Updated: 2021/10/24 07:27:08 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ static size_t	ft_printformats(char c1, va_list args)
 	len = 0;
 	if (c1 == 'c')
 		len = ft_print_char(va_arg(args, int));
-	else if(c1 == 's')
+	else if (c1 == 's')
 		len = ft_print_str(va_arg(args, char *));
-	else if(c1 == 'p')
+	else if (c1 == 'p')
 		len = ft_print_ptr(va_arg(args, void *));
-	else if(c1 == 'd')
+	else if (c1 == 'd')
 		len = ft_print_int(va_arg(args, int));
-	else if(c1 == 'i')
+	else if (c1 == 'i')
 		len = ft_print_int(va_arg(args, int));
-	else if(c1 == 'u')
+	else if (c1 == 'u')
 		len = ft_print_uint(va_arg(args, unsigned int));
-	else if(c1 == 'x')
+	else if (c1 == 'x')
 		len = ft_print_hex(va_arg(args, unsigned int));
-	else if(c1 == 'X')
+	else if (c1 == 'X')
 		len = ft_print_uhex(va_arg(args, unsigned int));
-	else if(c1 == '%')
+	else if (c1 == '%')
 		len = ft_print_char('%');
 	return (len);
 }
@@ -49,12 +49,12 @@ int	ft_printf(const char *s, ...)
 	va_start(args, s);
 	while (s[i] != '\0')
 	{
-		if(s[i] == '%' && s[i + 1] != '\0')
+		if (s[i] == '%' && s[i + 1] != '\0')
 		{
 			len += ft_printformats(s[i + 1], args);
 			i++;
 		}
-		else if(s[i] != '%')
+		else if (s[i] != '%')
 		{
 			ft_putchar_fd(s[i], 1);
 			len++;

@@ -6,7 +6,7 @@
 /*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:56:43 by ceduard2          #+#    #+#             */
-/*   Updated: 2021/10/20 15:56:44 by ceduard2         ###   ########.fr       */
+/*   Updated: 2021/10/24 07:27:57 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_uitoa(unsigned int u)
 	str = (char *)malloc(sizeof(*str) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	if(u == 0)
+	if (u == 0)
 		ft_strlcpy(str, "0", 2);
 	else
 		str = ft_uint_to_char(str, u, len);

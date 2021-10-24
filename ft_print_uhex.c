@@ -6,7 +6,7 @@
 /*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:54:38 by ceduard2          #+#    #+#             */
-/*   Updated: 2021/10/20 15:55:37 by ceduard2         ###   ########.fr       */
+/*   Updated: 2021/10/24 07:27:11 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_print_uhex(unsigned int n)
 
 	i = 0;
 	s = ft_intohex(n);
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		s[i] = ft_toupper(s[i]);
 		i++;
