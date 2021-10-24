@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 14:55:00 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/08 14:57:33 by linuxusr         ###   ########.fr       */
+/*   Created: 2021/10/20 15:55:18 by ceduard2          #+#    #+#             */
+/*   Updated: 2021/10/20 15:55:42 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ft_printf.h"
 

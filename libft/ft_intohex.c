@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intohex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/08 15:25:35 by linuxusr          #+#    #+#             */
-/*   Updated: 2021/10/13 14:15:20 by linuxusr         ###   ########.fr       */
+/*   Created: 2021/10/20 15:57:19 by ceduard2          #+#    #+#             */
+/*   Updated: 2021/10/20 15:57:22 by ceduard2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_convert_hex(char *s, unsigned int n, size_t len)
 {

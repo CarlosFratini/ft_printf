@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: linuxusr <linuxusr@student.42.fr>          +#+  +:+       +#+         #
+#    By: ceduard2 <ceduard2@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 09:44:18 by ceduard2          #+#    #+#              #
-#    Updated: 2021/10/11 18:55:53 by linuxusr         ###   ########.fr        #
+#    Updated: 2021/10/20 16:03:19 by ceduard2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,8 @@ clean:
 		rm -f $(OBJS)
 
 fclean:	clean
-		rm -f $(NAME)
 		$(MAKE) fclean -C ./libft
+		rm -f $(NAME)
 
 re:		fclean all
 
